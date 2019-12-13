@@ -5,4 +5,4 @@ SELECT marks_list.id_student, marks_list.mark, marks_list.id_exam, exam.id_exam,
 -- Берем номер группы у студентов и их имена
 SELECT students.name, marks.id_exam_a, students.id_group, marks.exam_name FROM students, marks WHERE students.id_student = marks.id_student INTO CURSOR _students
 -- Берем пару студентов с разными именами
-SELECT a.name, b.name, a.exam_name, a.id_group FROM _students as a, _students as b WHERE a.name < b.name
+SELECT a.name, b.name, a.exam_name, a.id_group FROM _students as a, _students as b WHERE a.name < b.name AND a.id_group = b.id_group 
